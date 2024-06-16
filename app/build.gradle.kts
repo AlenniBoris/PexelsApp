@@ -1,14 +1,15 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    id("kotlin-kapt")
 }
 
 android {
-    namespace = "com.example.pexelsapp"
+    namespace = "com.example.mywishlistapp"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.pexelsapp"
+        applicationId = "com.example.mywishlistapp"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -51,20 +52,15 @@ android {
 
 dependencies {
 
-    implementation(libs.androidx.room.runtime)
-    annotationProcessor(libs.androidx.room.compiler)
-    // optional - Kotlin Extensions and Coroutines support for Room
     implementation(libs.androidx.room.ktx)
-    // optional - RxJava2 support for Room
-    implementation(libs.androidx.room.rxjava2)
-    // optional - RxJava3 support for Room
-    implementation(libs.androidx.room.rxjava3)
-    // optional - Guava support for Room, including Optional and ListenableFuture
-    implementation(libs.androidx.room.guava)
-    // optional - Test helpers
-    testImplementation(libs.androidx.room.testing)
-    // optional - Paging 3 Integration
-    implementation(libs.androidx.room.paging)
+    implementation(libs.androidx.room.runtime)
+    kapt(libs.androidx.room.compiler)
+
+    implementation("androidx.navigation:navigation-compose:2.7.7")
+    implementation(libs.androidx.core.ktx)
+    implementation("androidx.compose.ui:ui")
+    implementation("androidx.compose.ui:ui-tooling-preview")
+    implementation("androidx.compose.material3:material3")
 
 
     implementation(libs.androidx.core.ktx)
