@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Pexels App"
+rootProject.name = "PexApp"
 include(":app")
  
