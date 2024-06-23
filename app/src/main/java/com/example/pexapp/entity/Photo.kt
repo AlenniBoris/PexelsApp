@@ -1,8 +1,12 @@
 package com.example.pexapp.entity
 
-import java.io.Serializable
+import androidx.room.Embedded
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 
+@Entity("favourites_photos")
 data class Photo(
+    @PrimaryKey(autoGenerate = false)
     val id: Int,
     val width: Int,
     val height: Int,
@@ -11,10 +15,11 @@ data class Photo(
     val photographer_url: String,
     val photographer_id: Int,
     val avg_color: String,
+    @Embedded(prefix = "src_")
     val src: PhotoFeatures,
     val liked: Boolean,
     val alt: String
-) : Serializable
+)
 
 data class PhotoFeatures(
     val original: String,
@@ -26,28 +31,3 @@ data class PhotoFeatures(
     val landscape: String,
     val tiny: String
 )
-
-fun Photo.asEntity(): PhotoEntity {
-    return PhotoEntity(
-        id = this.id,
-        width = this.width,
-        height = this.height,
-        url = this.url,
-        photographer = this.photographer,
-        photographerUrl = this.photographer_url,
-        photographerId = this.photographer_id,
-        avgColor = this.avg_color,
-        src = PhotoSrcEntity(
-            original = this.src.original,
-            large2x = this.src.large2x,
-            large = this.src.large,
-            medium = this.src.medium,
-            small = this.src.small,
-            portrait = this.src.portrait,
-            landscape = this.src.landscape,
-            tiny = this.src.tiny,
-        ),
-        liked = this.liked,
-        alt = this.alt
-    )
-}

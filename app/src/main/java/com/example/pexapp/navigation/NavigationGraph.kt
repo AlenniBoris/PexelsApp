@@ -4,7 +4,6 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -27,7 +26,9 @@ fun NavigationGraph(
             MainScreen(navController = navHostController)
         }
         composable(Route.favouriteRoute.routeToScreen){
-            FavouriteScreen()
+            FavouriteScreen(
+                navHostController = navHostController
+            )
         }
         composable(Route.detailsRoute.routeToScreen){ backStackEntry ->
             val arguments = requireNotNull(backStackEntry.arguments)

@@ -1,7 +1,10 @@
 package com.example.pexapp.dependencyinjection
 
-import com.example.pexapp.PexelsApplication
+import android.app.Application
+import androidx.room.Room
 import com.example.pexapp.api.PhotoApiService
+import com.example.pexapp.database.FavouritesDatabase
+import com.example.pexapp.repository.FavouritesRepository
 import com.example.pexapp.repository.PhotoRepository
 import com.example.pexapp.utils.Constants
 import dagger.Module
@@ -30,5 +33,19 @@ object DataModule {
     @Singleton
     fun providePhotoDataRepository(photoApiService: PhotoApiService): PhotoRepository =
         PhotoRepository(photoApiService)
+
+    @Provides
+    @Singleton
+    fun provideFavouritesDatabase(application: Application): FavouritesDatabase =
+        Room.databaseBuilder(
+            application,
+            FavouritesDatabase::class.java,
+            "favourites-data.db"
+        ).build()
+
+    @Provides
+    @Singleton
+    fun providesFavouritesRepository(database: FavouritesDatabase): FavouritesRepository =
+        FavouritesRepository(database)
 
 }

@@ -14,3 +14,5 @@ val Black = Color(0xFF1E1E1E)
 
 val Icon_Light_Theme = Color(0xFFF3F5F9)
 val Icon_Dark_Theme = Color(0xFF393939)
+
+val Header_text_color = Color(0xFF333333)
