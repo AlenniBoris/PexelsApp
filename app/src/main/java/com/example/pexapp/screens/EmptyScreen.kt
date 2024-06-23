@@ -14,21 +14,22 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.pexapp.R
-import com.example.pexapp.ui.theme.Red
-import com.example.pexapp.ui.theme.White
+import com.example.pexapp.uikit.theme.Red
+import com.example.pexapp.uikit.theme.White
 
 @Composable
 fun EmptyScreen(
     onExploreClicked: () -> Unit,
     text: String,
     isMainScreen: Boolean,
-    btnText: String = "Explore",
+    btnText: String = stringResource(id = R.string.explore_string),
     internetError: Boolean = false
 ){
     Column(
@@ -47,7 +48,7 @@ fun EmptyScreen(
                         R.drawable.ic_no_network_dark
                     }
                 ),
-                contentDescription = "Wi-fi error"
+                contentDescription = stringResource(id = R.string.wifi_error_description)
             )
         }else{
             Text(

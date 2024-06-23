@@ -7,11 +7,9 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.example.pexapp.screens.DetailsScreen
-import com.example.pexapp.screens.FavouriteScreen
-import com.example.pexapp.screens.MainScreen
-import com.example.pexapp.screens.SplashScreen
-
+import com.example.pexapp.screens.details.views.DetailsScreen
+import com.example.pexapp.screens.favourite.views.FavouriteScreen
+import com.example.pexapp.screens.main.views.MainScreen
 @Composable
 fun NavigationGraph(
     navHostController: NavHostController,
@@ -19,26 +17,23 @@ fun NavigationGraph(
 ){
     NavHost(
         navController = navHostController,
-        startDestination = Route.splashRoute.routeToScreen,
+        startDestination = Route.MainRoute.routeToScreen,
         modifier = Modifier.padding(padding)
     ){
-        composable(Route.mainRoute.routeToScreen){
+        composable(Route.MainRoute.routeToScreen){
             MainScreen(navController = navHostController)
         }
-        composable(Route.favouriteRoute.routeToScreen){
+        composable(Route.FavouriteRoute.routeToScreen){
             FavouriteScreen(
                 navHostController = navHostController
             )
         }
-        composable(Route.detailsRoute.routeToScreen){ backStackEntry ->
+        composable(Route.DetailsRoute.routeToScreen){ backStackEntry ->
             val arguments = requireNotNull(backStackEntry.arguments)
             DetailsScreen(
                 id = arguments.getString("id"),
                 navController = navHostController
             )
-        }
-        composable(Route.splashRoute.routeToScreen){
-            SplashScreen(navController = navHostController)
         }
     }
 }

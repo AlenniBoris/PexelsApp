@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <style name="Theme.PexelsApp.MySplash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">#BB1020</item>
+        <item name="windowSplashScreenAnimatedIcon">
+            @drawable/logo
+        </item>
+        <item name="postSplashScreenTheme">@style/Theme.PexApp</item>
+    </style>
+</resources>

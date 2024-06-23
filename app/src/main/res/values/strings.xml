@@ -1,5 +1,29 @@
 <resources>
-    <string name="app_name">PexApp</string>
+
+    <string name="app_name" translatable="false">Pexels</string>
+    <string name="image_description_string" translatable="false">Image</string>
+    <string name="logo_icon_string" translatable="false">Logo Icon</string>
+    <string name="search_icon_string" translatable="false">Search icon</string>
+    <string name="icon_string" translatable="false">Icon</string>
+    <string name="favourite_button_description" translatable="false">Button favourite</string>
+    <string name="download_button_description" translatable="false">Button download</string>
+    <string name="back_button_description" translatable="false">Button back</string>
+    <string name="icons_closed_string" translatable="false">Icons closed</string>
+    <string name="history_icon_string" translatable="false">History icon</string>
+
+    <string name="check_internet_string">Please, check your Internet connection</string>
+    <string name="bookmarks_header">Bookmarks</string>
+    <string name="bookmarks_empty_text">You havent saved anything yet</string>
+    <string name="wifi_error_description">Wi-fi error</string>
+    <string name="download_button_text">Download</string>
+    <string name="image_not_found">Image not found</string>
     <string name="download_started">Download started</string>
-    <string name="download_failed">Download failed (%1$s)</string>
+    <string name="download_failed">Download failed</string>
+    <string name="download_completed">Download completed!</string>
+    <string name="no_results_string">No results found</string>
+    <string name="no_internet_string">No Internet connection</string>
+    <string name="try_again_string">Try Again</string>
+    <string name="explore_string">Explore</string>
+    <string name="search_string">Search</string>
+
 </resources>

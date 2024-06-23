@@ -1,8 +1,7 @@
 package com.example.pexapp.navigation
 
 sealed class Route(val routeToScreen: String) {
-    object mainRoute: Route("mainscreen")
-    object favouriteRoute: Route("favouritescreen")
-    object detailsRoute: Route("detailsscreen/{id}")
-    object splashRoute: Route("splashscreen")
+    object MainRoute: Route("mainscreen")
+    object FavouriteRoute: Route("favouritescreen")
+    object DetailsRoute: Route("detailsscreen/{id}")
 }

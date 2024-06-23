@@ -28,7 +28,7 @@ class Downloader(private val context: Context) {
         } catch (e: Exception) {
             Toast.makeText(
                 context,
-                context.getString(R.string.download_failed, e),
+                context.getString(R.string.download_failed),
                 Toast.LENGTH_SHORT
             ).show()
             -1
