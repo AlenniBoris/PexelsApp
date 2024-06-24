@@ -30,7 +30,7 @@ fun EmptyScreen(
     text: String,
     isMainScreen: Boolean,
     btnText: String = stringResource(id = R.string.explore_string),
-    internetError: Boolean = false
+    hasInternet: Boolean = true
 ){
     Column(
         modifier = Modifier
@@ -39,7 +39,7 @@ fun EmptyScreen(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        if (internetError &&  isMainScreen){
+        if (!hasInternet){
             Image(
                 painter = painterResource(id =
                     if (MaterialTheme.colorScheme.background == White){

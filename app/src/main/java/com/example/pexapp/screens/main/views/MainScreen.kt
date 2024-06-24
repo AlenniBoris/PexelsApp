@@ -1,6 +1,7 @@
 package com.example.pexapp.screens.main.views
 
 import android.app.Activity
+import android.util.Log
 import android.widget.Toast
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Arrangement
@@ -131,26 +132,31 @@ fun MainScreen(
                 }
             }
         }
-        if (state.photos.isEmpty() && !hasInternet){
-            EmptyScreen(
-                onExploreClicked = {
-                    mainScreenViewModel.searchPhoto(state.queryText)
-                },
-                text = stringResource(id = R.string.no_internet_string),
-                isMainScreen = true,
-                internetError = true,
-                btnText = stringResource(id = R.string.try_again_string)
-            )
+        if (state.photos.isEmpty()){
+            if (!hasInternet){
+                Log.d("Internet", "NO INTERNET")
+                EmptyScreen(
+                    onExploreClicked = {
+                        mainScreenViewModel.searchPhoto(state.queryText)
+                    },
+                    text = stringResource(id = R.string.no_internet_string),
+                    isMainScreen = true,
+                    hasInternet = hasInternet,
+                    btnText = stringResource(id = R.string.try_again_string)
+                )
+            }else{
+                Log.d("Internet", "INTERNET")
+                EmptyScreen(
+                    onExploreClicked = {
+                        mainScreenViewModel.searchPhoto(state.queryText)
+                    },
+                    text = stringResource(id = R.string.no_results_string),
+                    isMainScreen = true,
+                    hasInternet = hasInternet
+                )
+            }
 
-        }else{
-            EmptyScreen(
-                onExploreClicked = {
-                    mainScreenViewModel.searchPhoto(state.queryText)
-                },
-                text = stringResource(id = R.string.no_results_string),
-                isMainScreen = true,
-                internetError = false
-            )
+
         }
     }
 

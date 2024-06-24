@@ -58,7 +58,6 @@ fun DetailsBottomBarButtons(
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
         val screenWidth = LocalConfiguration.current.screenWidthDp.dp
-
         Row (
             modifier = Modifier
                 .clip(RoundedCornerShape(24.dp))
@@ -85,6 +84,13 @@ fun DetailsBottomBarButtons(
                     tint = Color.White
                 )
             }
+            Text(
+                modifier = Modifier.fillMaxWidth(),
+                text = stringResource(R.string.download_button_text),
+                textAlign = TextAlign.Center,
+                fontFamily = FontFamily(Font(R.font.mulish_600)),
+                fontSize = 14.sp
+            )
             Text(
                 modifier = Modifier.fillMaxWidth(),
                 text = stringResource(R.string.download_button_text),

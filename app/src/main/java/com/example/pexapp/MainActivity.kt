@@ -1,7 +1,9 @@
 package com.example.pexapp
 
+import android.content.Context
 import android.os.Build
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.annotation.RequiresApi
@@ -13,6 +15,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.core.splashscreen.SplashScreen
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -24,6 +27,7 @@ import com.example.pexapp.navigation.Screen
 import com.example.pexapp.screens.main.MainScreenViewModel
 import com.example.pexapp.uikit.theme.PexAppTheme
 import com.example.pexapp.uikit.views.appBottomBar
+import com.example.pexapp.utils.ExtraFunctions.hasInternetConnection
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 import dagger.hilt.android.AndroidEntryPoint
@@ -42,7 +46,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    MainActivityShowFunction(splashScreen)
+                    MainActivityShowFunction(splashScreen, applicationContext)
                 }
             }
         }
@@ -52,6 +56,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun MainActivityShowFunction(
     splashScreen: SplashScreen,
+    context: Context
 ){
 
     val mainScreenViewModel: MainScreenViewModel = hiltViewModel()
@@ -59,7 +64,12 @@ fun MainActivityShowFunction(
 
     splashScreen.apply {
         setKeepOnScreenCondition {
-            mainScreenState.value.photos.isEmpty()
+            if (!hasInternetConnection(context)){
+                mainScreenState.value.photos.isNotEmpty()
+            }else{
+                mainScreenState.value.photos.isEmpty()
+            }
+
         }
     }
 

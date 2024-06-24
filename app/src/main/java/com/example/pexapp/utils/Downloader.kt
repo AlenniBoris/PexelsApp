@@ -2,10 +2,15 @@ package com.example.pexapp.utils
 
 import android.app.DownloadManager
 import android.content.Context
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.os.Environment
 import android.widget.Toast
 import androidx.core.net.toUri
 import com.example.pexapp.R
+import com.google.gson.internal.bind.TypeAdapters.URL
+import java.io.ByteArrayOutputStream
+import java.net.URL
 
 class Downloader(private val context: Context) {
     private val downloadManager = context.getSystemService(DownloadManager::class.java)

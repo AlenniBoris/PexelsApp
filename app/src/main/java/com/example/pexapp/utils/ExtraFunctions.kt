@@ -9,7 +9,7 @@ import kotlinx.coroutines.launch
 
 object ExtraFunctions {
     fun hasInternetConnection(context: Context): Boolean{
-        var res: Boolean = true
+        var res: Boolean = false
         val connectivityManager =
             context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         connectivityManager.getNetworkCapabilities(connectivityManager.activeNetwork)?.run{
