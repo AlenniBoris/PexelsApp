@@ -69,7 +69,6 @@ fun MainActivityShowFunction(
             }else{
                 mainScreenState.value.photos.isEmpty()
             }
-
         }
     }
 
