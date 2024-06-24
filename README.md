@@ -31,7 +31,7 @@ on each image, view its details.
 
 ## Installation and Use(after downloading from GitHub)
 
-- You can download an APK file from [here](https://github.com/AlenniBoris/PexelsApp/releases/tag/App-APK) and try it on your device. Download 1.0.0-apk.apk .
+- You can download an APK file from [here](https://github.com/AlenniBoris/PexelsApp/releases) and try it on your device. Download 1.0.0-apk.apk .
 
 - To use it after downloading from Github, you have to get your API key from Pexels. If you don't have it, check the official [page](https://www.pexels.com/). Then change app/src/main/java/com/example/pexapp/utils/Constants/API_KEY to your ow API key.
     
