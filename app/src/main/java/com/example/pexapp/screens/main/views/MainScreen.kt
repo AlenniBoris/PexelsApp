@@ -134,7 +134,6 @@ fun MainScreen(
         }
         if (state.photos.isEmpty()){
             if (!hasInternet){
-                Log.d("Internet", "NO INTERNET")
                 EmptyScreen(
                     onExploreClicked = {
                         mainScreenViewModel.searchPhoto(state.queryText)
@@ -145,7 +144,6 @@ fun MainScreen(
                     btnText = stringResource(id = R.string.try_again_string)
                 )
             }else{
-                Log.d("Internet", "INTERNET")
                 EmptyScreen(
                     onExploreClicked = {
                         mainScreenViewModel.searchPhoto(state.queryText)
@@ -155,8 +153,6 @@ fun MainScreen(
                     hasInternet = hasInternet
                 )
             }
-
-
         }
     }
 
