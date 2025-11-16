@@ -39,10 +39,10 @@ fun DetailsScreen(
     val prevRoute = navController.previousBackStackEntry?.destination?.route
 
     when(prevRoute){
-        Route.MainRoute.routeToScreen ->
-            detailsScreenViewModel.getPhotoFromPexelsById(id?.toInt())
-        Route.FavouriteRoute.routeToScreen ->
-            detailsScreenViewModel.getPhotoFromFavouritesDatabaseById(id?.toInt())
+        Route.MainRoute.routeToScreen -> {}
+//            detailsScreenViewModel.getPhotoFromPexelsById(id?.toInt())
+        Route.FavouriteRoute.routeToScreen -> {}
+//            detailsScreenViewModel.getPhotoFromFavouritesDatabaseById(id?.toInt())
     }
 
     val window = (context as Activity).window

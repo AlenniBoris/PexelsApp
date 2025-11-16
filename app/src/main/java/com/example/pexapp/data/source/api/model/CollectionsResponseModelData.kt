@@ -1,17 +1,16 @@
 package com.example.pexapp.data.source.api.model
 
 import com.google.gson.annotations.SerializedName
-import java.io.Serializable
 
-data class CollectionsResponse(
-    val id: String,
-    val title: String,
+data class CollectionsResponseModelData(
+    val id: String?,
+    val title: String?,
     val description: String?,
-    val private: Boolean,
+    val private: String?,
     @SerializedName("media_count")
-    val mediaCount: Int,
+    val mediaCount: String?,
     @SerializedName("photos_count")
-    val photosCount: Int,
+    val photosCount: String?,
     @SerializedName("videos_count")
-    val videosCount: Int
-) : Serializable
+    val videosCount: String?
+)

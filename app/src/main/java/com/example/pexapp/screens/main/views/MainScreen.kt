@@ -45,7 +45,12 @@ import kotlinx.coroutines.flow.onEach
 fun MainScreen(
     navController: NavHostController,
     mainScreenViewModel: MainScreenViewModel = hiltViewModel()
-){
+) {
+
+    LaunchedEffect(Unit) {
+        mainScreenViewModel.aa()
+    }
+
 
     val context = LocalContext.current
     val window = (context as Activity).window
@@ -54,8 +59,12 @@ fun MainScreen(
 
     val hasInternet = hasInternetConnection(context)
 
-    if (!hasInternet){
-        Toast.makeText(context, stringResource(id = R.string.check_internet_string), Toast.LENGTH_SHORT).show()
+    if (!hasInternet) {
+        Toast.makeText(
+            context,
+            stringResource(id = R.string.check_internet_string),
+            Toast.LENGTH_SHORT
+        ).show()
     }
 
     val state by mainScreenViewModel.screenState.collectAsStateWithLifecycle()
@@ -74,12 +83,14 @@ fun MainScreen(
             active = state.isActive,
             query = state.queryText,
             history = state.history,
-            onQueryChanged = { mainScreenViewModel.searchPhoto(it) },
+            onQueryChanged = {
+//                mainScreenViewModel.searchPhoto(it)
+                             },
             onSearch = {
-                mainScreenViewModel.forceSearchPhoto(it)
+//                mainScreenViewModel.forceSearchPhoto(it)
             },
             onActiveChanged = {
-                mainScreenViewModel.changeIsActive(it)
+//                mainScreenViewModel.changeIsActive(it)
             }
         )
 
@@ -93,7 +104,7 @@ fun MainScreen(
         ) {
             items(state.featuredCollections) { item ->
                 FeaturedItem(
-                    modifier = Modifier.animateItemPlacement(),
+//                    modifier = Modifier.animateItemPlacement(),
                     title = item.title,
                     selected =
                         (item.id == state.selectedFeaturedCollectionId)
@@ -113,7 +124,7 @@ fun MainScreen(
         AppLoadingProgressBar(isLoading = state.photos.isEmpty() && !state.errorState)
 
 
-        if (state.photos.isNotEmpty() && !state.errorState){
+        if (state.photos.isNotEmpty() && !state.errorState) {
             //Photos
             LazyVerticalStaggeredGrid(
                 columns = StaggeredGridCells.Fixed(2),
@@ -122,9 +133,9 @@ fun MainScreen(
                     .padding(horizontal = 16.dp)
                     .padding(top = 24.dp)
             ) {
-                items(state.photos){photo ->
+                items(state.photos) { photo ->
                     PhotoCard(
-                        id = photo.id,
+                        id = photo.id.toInt(),
                         url = photo.src.medium,
                         author = photo.photographer,
                         navController = navController
@@ -132,21 +143,21 @@ fun MainScreen(
                 }
             }
         }
-        if (state.photos.isEmpty()){
-            if (!hasInternet){
+        if (state.photos.isEmpty()) {
+            if (!hasInternet) {
                 EmptyScreen(
                     onExploreClicked = {
-                        mainScreenViewModel.searchPhoto(state.queryText)
+//                        mainScreenViewModel.searchPhoto(state.queryText)
                     },
                     text = stringResource(id = R.string.no_internet_string),
                     isMainScreen = true,
                     hasInternet = hasInternet,
                     btnText = stringResource(id = R.string.try_again_string)
                 )
-            }else{
+            } else {
                 EmptyScreen(
                     onExploreClicked = {
-                        mainScreenViewModel.searchPhoto(state.queryText)
+//                        mainScreenViewModel.searchPhoto(state.queryText)
                     },
                     text = stringResource(id = R.string.no_results_string),
                     isMainScreen = true,

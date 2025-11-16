@@ -23,10 +23,10 @@ object ExtraFunctions {
     }
 
     fun changeSearch(scope: CoroutineScope, mainScreenViewModel: MainScreenViewModel, title: String, id: String){
-        mainScreenViewModel.queryTextChanged(title)
-        mainScreenViewModel.selectedFeaturedCollectionIdChanged(id)
-        scope.launch {
-            mainScreenViewModel.getQueryPhotos(title)
-        }
+//        mainScreenViewModel.queryTextChanged(title)
+//        mainScreenViewModel.selectedFeaturedCollectionIdChanged(id)
+//        scope.launch {
+//            mainScreenViewModel.getQueryPhotos(title)
+//        }
     }
 }

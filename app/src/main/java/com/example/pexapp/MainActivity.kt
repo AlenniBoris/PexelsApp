@@ -28,7 +28,6 @@ import com.example.pexapp.screens.main.MainScreenViewModel
 import com.example.pexapp.uikit.theme.PexAppTheme
 import com.example.pexapp.uikit.views.appBottomBar
 import com.example.pexapp.utils.ExtraFunctions.hasInternetConnection
-import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -62,15 +61,15 @@ fun MainActivityShowFunction(
     val mainScreenViewModel: MainScreenViewModel = hiltViewModel()
     val mainScreenState = mainScreenViewModel.screenState.collectAsStateWithLifecycle()
 
-    splashScreen.apply {
-        setKeepOnScreenCondition {
-            if (!hasInternetConnection(context)){
-                mainScreenState.value.photos.isNotEmpty()
-            }else{
-                mainScreenState.value.photos.isEmpty()
-            }
-        }
-    }
+//    splashScreen.apply {
+//        setKeepOnScreenCondition {
+//            if (!hasInternetConnection(context)){
+//                mainScreenState.value.photos.isNotEmpty()
+//            }else{
+//                mainScreenState.value.photos.isEmpty()
+//            }
+//        }
+//    }
 
     val navController = rememberNavController()
     val screensForIcons = listOf(
@@ -81,13 +80,6 @@ fun MainActivityShowFunction(
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     val currentScreen : String? = navBackStackEntry?.destination?.route
 
-    val systemUiController = rememberSystemUiController()
-    val useDarkIcons = MaterialTheme.colorScheme.background == Color.White
-
-    systemUiController.setSystemBarsColor(
-        color = MaterialTheme.colorScheme.background,
-        darkIcons = useDarkIcons
-    )
 
     Scaffold(
         bottomBar = if (screensForIcons.map { it.route }.contains(currentScreen)) {

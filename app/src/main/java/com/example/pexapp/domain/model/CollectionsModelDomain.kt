@@ -1,9 +1,9 @@
-package com.example.pexapp.data.model
+package com.example.pexapp.domain.model
 
-data class Collections(
+data class CollectionsModelDomain(
     val id: String,
     val title: String,
-    val description: String?,
+    val description: String,
     val private: Boolean,
     val mediaCount: Int,
     val photosCount: Int,

@@ -29,10 +29,10 @@ import com.example.pexapp.uikit.views.AppTopBar
 fun FavouriteScreen(
     navHostController: NavHostController,
     favouriteScreenViewModel: FavouriteScreenViewModel = hiltViewModel()
-){
+) {
 
     LaunchedEffect(Unit) {
-        favouriteScreenViewModel.getFavouritePhotosInit()
+//        favouriteScreenViewModel.getFavouritePhotosInit()
     }
 
     val state by favouriteScreenViewModel.screenState.collectAsStateWithLifecycle()
@@ -53,27 +53,27 @@ fun FavouriteScreen(
         Column(
             modifier = Modifier
                 .fillMaxSize()
-        ){
+        ) {
 
             Divider(modifier = Modifier.height(30.dp), color = MaterialTheme.colorScheme.background)
 
-            if (state.favouritePhotos.isNotEmpty() && !state.isNoFavourite){
+            if (state.favouritePhotos.isNotEmpty() && !state.isNoFavourite) {
                 LazyVerticalStaggeredGrid(
                     columns = StaggeredGridCells.Fixed(2),
                     modifier = Modifier
                         .padding(horizontal = 16.dp)
                         .padding(top = 40.dp)
                 ) {
-                    items(state.favouritePhotos){favouritePhoto ->
+                    items(state.favouritePhotos) { favouritePhoto ->
                         PhotoCards(
-                            favouritePhoto.id,
+                            favouritePhoto.id.toInt(),
                             favouritePhoto.src.medium,
                             favouritePhoto.photographer,
                             navHostController
                         )
                     }
                 }
-            }else if(state.isNoFavourite) {
+            } else if (state.isNoFavourite) {
                 EmptyScreen(
                     onExploreClicked = {
                         navHostController.navigate(Route.MainRoute.routeToScreen) {

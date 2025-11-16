@@ -1,8 +1,8 @@
 package com.example.pexapp.screens.favourite
 
-import com.example.pexapp.data.model.Photo
+import com.example.pexapp.domain.model.PhotoModelDomain
 
 data class FavouriteScreenState(
-    val favouritePhotos: List<Photo> = emptyList(),
+    val favouritePhotos: List<PhotoModelDomain> = emptyList(),
     val isNoFavourite: Boolean = false
 )

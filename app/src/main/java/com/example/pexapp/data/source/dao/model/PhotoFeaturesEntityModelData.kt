@@ -1,6 +1,6 @@
-package com.example.pexapp.data.model
+package com.example.pexapp.data.source.dao.model
 
-data class PhotoFeatures(
+data class PhotoFeaturesEntityModelData(
     val original: String,
     val large2x: String,
     val large: String,

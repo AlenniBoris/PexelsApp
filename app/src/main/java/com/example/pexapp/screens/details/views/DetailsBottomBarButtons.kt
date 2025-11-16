@@ -12,8 +12,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.Download
+
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -32,7 +31,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.pexapp.R
-import com.example.pexapp.data.model.Photo
+import com.example.pexapp.domain.model.PhotoModelDomain
 import com.example.pexapp.navigation.Route
 import com.example.pexapp.screens.details.DetailsScreenViewModel
 import com.example.pexapp.utils.Downloader
@@ -41,7 +40,7 @@ import com.example.pexapp.utils.Downloader
 fun DetailsBottomBarButtons(
     context: Context,
     detailsScreenViewModel: DetailsScreenViewModel,
-    currentPhoto: Photo,
+    currentPhoto: PhotoModelDomain,
     currentPhotoIsInFavourite: Boolean,
     id: Int,
     navController: NavHostController
@@ -79,7 +78,7 @@ fun DetailsBottomBarButtons(
                 contentAlignment = Alignment.Center
             ) {
                 Icon(
-                    imageVector = Icons.Outlined.Download,
+                    painter = painterResource(R.drawable.icon_favourites_active),
                     contentDescription = stringResource(id = R.string.download_button_description),
                     tint = Color.White
                 )
@@ -110,11 +109,11 @@ fun DetailsBottomBarButtons(
 
                     when (prevRoute) {
                         Route.MainRoute.routeToScreen -> {
-                            detailsScreenViewModel.actionOnFavouriteButton(currentPhoto)
+//                            detailsScreenViewModel.actionOnFavouriteButton(currentPhoto)
                         }
 
                         Route.FavouriteRoute.routeToScreen -> {
-                            detailsScreenViewModel.actionOnFavouriteButton(currentPhoto)
+//                            detailsScreenViewModel.actionOnFavouriteButton(currentPhoto)
                             navController.popBackStack()
                         }
                     }

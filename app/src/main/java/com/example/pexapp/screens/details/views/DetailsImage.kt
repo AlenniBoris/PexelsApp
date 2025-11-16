@@ -13,11 +13,11 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.example.pexapp.R
-import com.example.pexapp.data.model.Photo
+import com.example.pexapp.domain.model.PhotoModelDomain
 
 @Composable
 fun DetailsImage(
-    currentPhoto: Photo?
+    currentPhoto: PhotoModelDomain?
 ){
     AsyncImage(
         modifier = Modifier

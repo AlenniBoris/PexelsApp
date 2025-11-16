@@ -6,13 +6,10 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.Icon
+import androidx.compose.material3.Icon
 import androidx.compose.material3.SearchBar
-import androidx.compose.material.Text
+import androidx.compose.material3.Text
 import androidx.compose.material3.TextFieldDefaults
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Close
-import androidx.compose.material.icons.filled.History
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.SearchBarDefaults
@@ -56,7 +53,7 @@ fun AppSearchBar(
         trailingIcon = {
             if (active){
                 Icon(
-                    imageVector = Icons.Filled.Close,
+                    painter = painterResource(R.drawable.icon_favourites_active),
                     contentDescription = stringResource(id = R.string.icons_closed_string),
                     modifier = Modifier.clickable {
                         if (query.isNotBlank()){
@@ -96,7 +93,7 @@ fun HistoryIcon(
     ) {
         Icon(
             modifier = Modifier.padding(end = 16.dp),
-            imageVector = Icons.Filled.History,
+            painter = painterResource(R.drawable.icon_favourites_active),
             contentDescription = stringResource(id = R.string.history_icon_string)
         )
         Text(text = text)

@@ -1,15 +1,15 @@
-package com.example.pexapp.data.model
+package com.example.pexapp.domain.model
 
-data class Photo(
-    val id: Int,
+data class PhotoModelDomain(
+    val id: Long,
     val width: Int,
     val height: Int,
     val url: String,
     val photographer: String,
     val photographerUrl: String,
-    val photographerId: Int,
+    val photographerId: Long,
     val avgColor: String,
-    val src: PhotoFeatures,
+    val src: PhotoFeaturesModelDomain,
     val liked: Boolean,
     val alt: String
 )
