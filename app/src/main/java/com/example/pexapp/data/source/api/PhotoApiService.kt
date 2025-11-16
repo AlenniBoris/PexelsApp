@@ -66,6 +66,7 @@ interface PhotoApiService {
                     .addNetworkInterceptor(
                         HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
                     )
+                    .retryOnConnectionFailure(false)
                     .build()
             )
             .build()

@@ -65,7 +65,7 @@ class WebDataRepositoryImpl @Inject constructor(
                 LogPrinter.printLog(
                     tag = "!!!!",
                     message = """
-                        WebDataRepositoryImpl-getFavouriteById
+                        WebDataRepositoryImpl-getCuratedPhotosList
                         
                         ${exception.stackTraceToString()}
                         """.trimIndent()
@@ -99,7 +99,7 @@ class WebDataRepositoryImpl @Inject constructor(
                 LogPrinter.printLog(
                     tag = "!!!!",
                     message = """
-                        WebDataRepositoryImpl-getFavouriteById
+                        WebDataRepositoryImpl-getSearchedPhotosList
                         
                         ${exception.stackTraceToString()}
                         """.trimIndent()
@@ -127,7 +127,7 @@ class WebDataRepositoryImpl @Inject constructor(
                 LogPrinter.printLog(
                     tag = "!!!!",
                     message = """
-                        WebDataRepositoryImpl-getFavouriteById
+                        WebDataRepositoryImpl-getFeaturedCollectionsList
                         
                         ${exception.stackTraceToString()}
                         """.trimIndent()

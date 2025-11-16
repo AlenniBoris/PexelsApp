@@ -23,7 +23,20 @@
     <string name="no_results_string">No results found</string>
     <string name="no_internet_string">No Internet connection</string>
     <string name="try_again_string">Try Again</string>
-    <string name="explore_string">Explore</string>
+    <string name="explore_text">Explore</string>
     <string name="search_string">Search</string>
+    <string name="internet_recovered_text">Internet connection returned</string>
+    <string name="internet_exception">Connection lost</string>
+    <string name="light_theme_mode_text">Light</string>
+    <string name="dark_theme_mode_text">Dark</string>
+    <string name="system_theme_mode_text">System</string>
+    <string name="error_getting_data_exception">Error getting data. Try againg</string>
+    <string name="error_internet">Error with internet connection</string>
+    <string name="error_unknown">Unknown error, try later</string>
+    <string name="nothing_found_text">Nothing found</string>
+    <string name="picture_description">Picture description</string>
+    <string name="nan_text">NaN</string>
+    <string name="enter_query_text">Enter query</string>
+    <string name="delete_history_item_text">Delete request</string>
 
 </resources>
