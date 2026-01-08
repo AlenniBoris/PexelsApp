@@ -1,4 +1,4 @@
-package com.example.pexapp.data.mappers
+package com.example.pexapp.domain.mapper
 
 import com.example.pexapp.domain.model.CommonExceptionModelDomain
 import java.net.ConnectException

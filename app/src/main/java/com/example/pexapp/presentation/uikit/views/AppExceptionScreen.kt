@@ -22,10 +22,11 @@ import com.example.pexapp.presentation.model.ExceptionModelUi
 import com.example.pexapp.presentation.model.toUiModel
 import com.example.pexapp.presentation.uikit.theme.PexAppTheme
 import com.example.pexapp.presentation.uikit.theme.appColor
+import com.example.pexapp.presentation.uikit.theme.appTextSize
 import com.example.pexapp.presentation.uikit.theme.appTextStyle
 import com.example.pexapp.presentation.uikit.theme.baseTextColor
-import com.example.pexapp.presentation.uikit.theme.extraTextColor
 import com.example.pexapp.presentation.uikit.theme.exceptionScreenTextPadding
+import com.example.pexapp.presentation.uikit.theme.extraTextColor
 import com.example.pexapp.presentation.uikit.theme.extraTextSize
 
 @Composable
@@ -45,6 +46,18 @@ fun AppExceptionScreen(
             painter = painterResource(exception.exceptionIconResource),
             tint = baseTextColor,
             contentDescription = stringResource(exception.exceptionStringResource)
+        )
+
+        Text(
+            modifier = Modifier
+                .padding(exceptionScreenTextPadding)
+                .clickable { onTryAgain() },
+            text = stringResource(exception.exceptionStringResource),
+            style = appTextStyle.copy(
+                color = baseTextColor,
+                fontSize = appTextSize,
+                textAlign = TextAlign.Center
+            )
         )
 
         Text(

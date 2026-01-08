@@ -1,8 +1,9 @@
 package com.example.pexapp.presentation.screens.favourite
 
-import com.example.pexapp.domain.model.PhotoModelDomain
+import com.example.pexapp.presentation.model.PhotoModelUi
 
 data class FavouriteScreenState(
-    val favouritePhotos: List<PhotoModelDomain> = emptyList(),
-    val isNoFavourite: Boolean = false
-)
+    private val photos: List<PhotoModelUi> = emptyList()
+){
+    val workingList = photos.reversed()
+}

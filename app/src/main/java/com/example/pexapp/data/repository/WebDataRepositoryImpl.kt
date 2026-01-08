@@ -2,7 +2,7 @@ package com.example.pexapp.data.repository
 
 import com.example.pexapp.data.mappers.asCollectionsModelDomain
 import com.example.pexapp.data.mappers.asPhotoDomainModel
-import com.example.pexapp.data.mappers.toCommonException
+import com.example.pexapp.domain.mapper.toCommonException
 import com.example.pexapp.data.source.api.ApiServiceValues
 import com.example.pexapp.data.source.api.PhotoApiService
 import com.example.pexapp.domain.model.CollectionsModelDomain

@@ -1,10 +1,8 @@
 package com.example.pexapp.presentation.uikit.views
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
@@ -15,7 +13,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import com.example.pexapp.R
-import com.example.pexapp.presentation.uikit.theme.appColor
 import com.example.pexapp.presentation.uikit.theme.appTextSize
 import com.example.pexapp.presentation.uikit.theme.appTextStyle
 import com.example.pexapp.presentation.uikit.theme.baseTextColor

@@ -1,43 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name" translatable="false">Pexels</string>
     <string name="image_description_string" translatable="false">Image</string>
-    <string name="logo_icon_string" translatable="false">Logo Icon</string>
-    <string name="search_icon_string" translatable="false">Search icon</string>
     <string name="icon_string" translatable="false">Icon</string>
-    <string name="favourite_button_description" translatable="false">Button favourite</string>
-    <string name="download_button_description" translatable="false">Button download</string>
-    <string name="back_button_description" translatable="false">Button back</string>
-    <string name="icons_closed_string" translatable="false">Icons closed</string>
-    <string name="history_icon_string" translatable="false">History icon</string>
-
-    <string name="check_internet_string">Проверьте свое интернет соединение</string>
-    <string name="bookmarks_header">Закладки</string>
-    <string name="bookmarks_empty_text">У вас пока нет сохраненный</string>
-    <string name="wifi_error_description">Ошибка с соединением</string>
-    <string name="download_button_text">Загрузить</string>
-    <string name="image_not_found">Изображение не найдено</string>
-    <string name="download_started">Загрузка началась</string>
-    <string name="download_failed">Не удалось загрузить</string>
     <string name="download_completed">Загрузка завершена!</string>
-    <string name="no_results_string">Результатов не найдено</string>
-    <string name="no_internet_string">Нет соединения</string>
     <string name="try_again_string">Попробовать снова</string>
     <string name="explore_text">Искать</string>
-    <string name="search_string">Поиск</string>
     <string name="internet_recovered_text">Соединение восстановлено</string>
     <string name="internet_exception">Соединение потеряно</string>
-    <string name="light_theme_mode_text">Light</string>
-    <string name="dark_theme_mode_text">Dark</string>
-    <string name="system_theme_mode_text">System</string>
-    <string name="error_getting_data_exception">Error getting data. Try againg</string>
-    <string name="error_internet">Error with internet connection</string>
-    <string name="error_unknown">Unknown error, try later</string>
-    <string name="nothing_found_text">Nothing found</string>
+    <string name="light_theme_mode_text">Светлая</string>
+    <string name="dark_theme_mode_text">Темная</string>
+    <string name="system_theme_mode_text">Системная</string>
+    <string name="error_getting_data_exception">Ошибка получения данных. Попробуйте снова</string>
+    <string name="error_internet">Ошибка с соединением</string>
+    <string name="error_unknown">Неизвестная ошибка, попробуйте снова</string>
+    <string name="nothing_found_text">Ничего не найдено</string>
     <string name="picture_description">Picture description</string>
     <string name="nan_text">NaN</string>
-    <string name="enter_query_text">Enter query</string>
+    <string name="enter_query_text">Введите запрос</string>
     <string name="delete_history_item_text">Delete request</string>
+    <string name="download_text">Скачать</string>
+    <string name="animation_description">Animation</string>
+    <string name="write_storage_permission">Нужно для скачивания фото</string>
+    <string name="write_storage_permission_name">Записывание в память</string>
+    <string name="nothing_saved_text">Ничего не сохранено</string>
+    <string name="favourite_screen_top">Сохраненные</string>
+    <string name="russian_language_text">Русский</string>
+    <string name="english_language_text">English</string>
+    <string name="settings_screen_top">Настройки</string>
+    <string name="contribution_to_pexels">Приложение работает благодаря бесплатному сервису Pexels Api. Поэтому посетите их сайт, www.pexels.com, и попробуйте остальные сервисы. Также не забудьте оценить их приложение в Google Play</string>
 
 </resources>

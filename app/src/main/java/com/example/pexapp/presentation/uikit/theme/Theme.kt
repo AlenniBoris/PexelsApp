@@ -15,7 +15,9 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.example.pexapp.presentation.uikit.utils.currentLanguageMode
 import com.example.pexapp.presentation.uikit.utils.currentThemeMode
+import com.example.pexapp.presentation.uikit.utils.getLastLanguageAndApply
 import com.example.pexapp.presentation.uikit.utils.getLastThemeAndApply
 
 private val DarkColorScheme = darkColorScheme(
@@ -46,9 +48,11 @@ fun PexAppTheme(
 
     val context = LocalContext.current
     val themeModeInit = remember { context.getLastThemeAndApply(isSystemDarkMode = darkTheme) }
+    val langModeInit = remember { context.getLastLanguageAndApply() }
 
     val colorScheme by remember(
-        key1 = currentThemeMode.collectAsStateWithLifecycle().value.isThemeDark
+        key1 = currentThemeMode.collectAsStateWithLifecycle().value.isThemeDark,
+        key2 = currentLanguageMode.collectAsStateWithLifecycle().value.language
     ) {
         mutableStateOf(LightColorScheme.copy())
     }

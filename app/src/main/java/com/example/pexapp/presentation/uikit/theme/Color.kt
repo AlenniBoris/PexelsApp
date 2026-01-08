@@ -47,6 +47,7 @@ val bottomBarActiveIconColor = Color(0xFFBB1020)
 
 val supportButtonsBackgroundColor = Color(0xFFBB1020)
 val extraTextColor = Color(0xFFBB1020)
+val supportButtonsTextColor = Color(0xFFFFFFFF)
 
 val appSubtleColor = Color(0xFFB5B5B5)
 val progressIndicatorColor = Color(0xFFBB1020)

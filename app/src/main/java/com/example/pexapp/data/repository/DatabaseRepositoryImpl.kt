@@ -2,7 +2,7 @@ package com.example.pexapp.data.repository
 
 import com.example.pexapp.data.mappers.asEntityModelData
 import com.example.pexapp.data.mappers.asPhotoSimpleDomainModel
-import com.example.pexapp.data.mappers.toCommonException
+import com.example.pexapp.domain.mapper.toCommonException
 import com.example.pexapp.data.source.dao.FavouritesDatabase
 import com.example.pexapp.domain.model.CommonExceptionModelDomain
 import com.example.pexapp.domain.model.CustomResultModelDomain

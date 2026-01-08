@@ -143,7 +143,24 @@ private fun LightTheme() {
                     currentRoute = "favouritescreen",
                     items = listOf(
                         AppScreen.Home,
-                        AppScreen.Favourite
+                        AppScreen.Favourite,
+                        AppScreen.Settings
+                    )
+                )
+
+                AppBottomBar(
+                    modifier = Modifier
+                        .padding(
+                            top = 10.dp
+                        )
+                        .fillMaxWidth()
+                        .padding(vertical = 5.dp, horizontal = 10.dp),
+                    onClick = {},
+                    currentRoute = "settingsscreen",
+                    items = listOf(
+                        AppScreen.Home,
+                        AppScreen.Favourite,
+                        AppScreen.Settings
                     )
                 )
             }

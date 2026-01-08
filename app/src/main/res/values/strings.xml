@@ -10,21 +10,9 @@
     <string name="back_button_description" translatable="false">Button back</string>
     <string name="icons_closed_string" translatable="false">Icons closed</string>
     <string name="history_icon_string" translatable="false">History icon</string>
-
-    <string name="check_internet_string">Please, check your Internet connection</string>
-    <string name="bookmarks_header">Bookmarks</string>
-    <string name="bookmarks_empty_text">You havent saved anything yet</string>
-    <string name="wifi_error_description">Wi-fi error</string>
-    <string name="download_button_text">Download</string>
-    <string name="image_not_found">Image not found</string>
-    <string name="download_started">Download started</string>
-    <string name="download_failed">Download failed</string>
     <string name="download_completed">Download completed!</string>
-    <string name="no_results_string">No results found</string>
-    <string name="no_internet_string">No Internet connection</string>
     <string name="try_again_string">Try Again</string>
     <string name="explore_text">Explore</string>
-    <string name="search_string">Search</string>
     <string name="internet_recovered_text">Internet connection returned</string>
     <string name="internet_exception">Connection lost</string>
     <string name="light_theme_mode_text">Light</string>
@@ -38,5 +26,15 @@
     <string name="nan_text">NaN</string>
     <string name="enter_query_text">Enter query</string>
     <string name="delete_history_item_text">Delete request</string>
+    <string name="download_text">Download</string>
+    <string name="animation_description">Animation</string>
+    <string name="write_storage_permission">Use it to download pictures to your device</string>
+    <string name="write_storage_permission_name">Write to memory</string>
+    <string name="nothing_saved_text">Nothing saved yet</string>
+    <string name="favourite_screen_top">Saved</string>
+    <string name="russian_language_text">Russian</string>
+    <string name="english_language_text">English</string>
+    <string name="settings_screen_top">Settings</string>
+    <string name="contribution_to_pexels">This app is working because of free Pexels Api. So, go to their website, www.pexels.com, and try their services. Also do not forget to leave good grade for their app on Google Play</string>
 
 </resources>

@@ -18,8 +18,7 @@ val appContentPadding = PaddingValues(horizontal = 20.dp)
 val homeScreenIndicatorInnerPadding = PaddingValues(all = 10.dp)
 val homeScreenIndicatorSize = 30.dp
 val homeScreenSectionTopPadding = PaddingValues(top = 15.dp)
-val appPictureShape = RoundedCornerShape(24.dp)
-val appPhotoSectionVerticalSpacing = 10.dp
+val appRoundedShape = RoundedCornerShape(24.dp)
 val appPhotoSectionSpacing = 10.dp
 val appPictureTextInnerPadding = PaddingValues(vertical = 10.dp, horizontal = 10.dp)
 val homeScreenFeaturedHorizontalSpacing = 10.dp
@@ -34,3 +33,20 @@ val historyItemsHorizontalSpacing = 10.dp
 val historyListTopPadding = PaddingValues(top = 10.dp)
 val historyItemShape = RoundedCornerShape(24.dp)
 val historyItemDeleteButtonOuterPadding = PaddingValues(start = 13.dp)
+val topBarInnerPadding = PaddingValues(horizontal = 20.dp)
+val topBarOuterPadding = PaddingValues(top = 15.dp)
+val topBarButtonOuterPadding = PaddingValues(end = 20.dp)
+val topBarButtonInnerPadding = PaddingValues(all = 15.dp)
+val topBarButtonShape = RoundedCornerShape(20.dp)
+val detailsScreenSectionTopPadding = PaddingValues(top = 15.dp)
+val detailsScreenButtonsVerticalPadding = PaddingValues(vertical = 15.dp)
+val detailsScreenPicMinSize = 40.dp
+val detailsDownloadTextPadding = PaddingValues(horizontal = 15.dp)
+val detailsButtonsInnerPadding = PaddingValues(all = 15.dp)
+val detailsLikedOuterPadding = PaddingValues(start = 10.dp)
+val detailsScreenThemedPhotosLoadingPadding = PaddingValues(vertical = 15.dp)
+val detailsScreenLoadingBorderWidth = 2.dp
+val favouriteScreenSectionTopPadding = PaddingValues(top = 15.dp)
+val settingsScreenSectionTopPadding = PaddingValues(top = 15.dp)
+val settingsScreenSectionTripleTopPadding = PaddingValues(top = 50.dp)
+val lazyButtonInnerPadding = PaddingValues(horizontal = 15.dp, vertical = 10.dp)

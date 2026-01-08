@@ -13,4 +13,3 @@ data class PhotoModelDomain(
     val liked: Boolean,
     val alt: String
 )
-

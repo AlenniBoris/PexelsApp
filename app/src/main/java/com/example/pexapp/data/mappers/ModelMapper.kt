@@ -13,14 +13,16 @@ fun PhotoEntityModelData.asPhotoSimpleDomainModel(): PhotoSimpleModelDomain =
     PhotoSimpleModelDomain(
         id = this.id,
         photographer = this.photographer,
-        photoPictureUrl = this.photoPictureUrl
+        photoPictureMediumSizeUrl = this.photoPictureMediumSizeUrl,
+        photoPictureOriginalSizeUrl = this.photoPictureOriginalSizeUrl
     )
 
 fun PhotoSimpleModelDomain.asEntityModelData(): PhotoEntityModelData =
     PhotoEntityModelData(
         id = this.id,
         photographer = this.photographer,
-        photoPictureUrl = this.photoPictureUrl
+        photoPictureMediumSizeUrl = this.photoPictureMediumSizeUrl,
+        photoPictureOriginalSizeUrl = this.photoPictureOriginalSizeUrl
     )
 
 fun CollectionsResponseModelData.asCollectionsModelDomain(): CollectionsModelDomain? = runCatching {
@@ -64,12 +66,4 @@ fun PhotoResponseModelData.asPhotoDomainModel(): PhotoModelDomain? = runCatching
 }.getOrElse {
     Log.e("!!!!", it.stackTraceToString())
     null
-}
-
-fun PhotoModelDomain.asPhotoEntityModelData(): PhotoEntityModelData {
-    return PhotoEntityModelData(
-        id = this.id,
-        photographer = this.photographer,
-        photoPictureUrl = this.src.medium
-    )
 }

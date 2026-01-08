@@ -2,6 +2,7 @@ package com.example.pexapp.domain.model
 
 data class PhotoSimpleModelDomain(
     val id: Long,
-    val photoPictureUrl: String,
-    val photographer: String,
+    val photoPictureMediumSizeUrl: String,
+    val photoPictureOriginalSizeUrl: String,
+    val photographer: String
 )

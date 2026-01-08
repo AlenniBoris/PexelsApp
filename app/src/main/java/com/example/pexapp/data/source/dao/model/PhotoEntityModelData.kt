@@ -9,6 +9,8 @@ data class PhotoEntityModelData(
     @PrimaryKey(autoGenerate = false)
     val id: Long,
     val photographer: String,
-    @ColumnInfo(name = "photo_picture_url")
-    val photoPictureUrl: String
+    @ColumnInfo(name = "photo_picture_medium_size_url")
+    val photoPictureMediumSizeUrl: String,
+    @ColumnInfo(name = "photo_picture_original_size_url")
+    val photoPictureOriginalSizeUrl: String
 )

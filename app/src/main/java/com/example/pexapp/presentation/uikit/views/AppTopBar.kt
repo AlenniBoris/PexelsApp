@@ -1,74 +1,135 @@
 package com.example.pexapp.presentation.uikit.views
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
+import androidx.compose.material.Icon
+import androidx.compose.material.Surface
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.font.Font
-import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
-import androidx.navigation.NavHostController
 import com.example.pexapp.R
+import com.example.pexapp.presentation.uikit.theme.PexAppTheme
+import com.example.pexapp.presentation.uikit.theme.appColor
+import com.example.pexapp.presentation.uikit.theme.appTextStyle
+import com.example.pexapp.presentation.uikit.theme.baseTextColor
+import com.example.pexapp.presentation.uikit.theme.clickableElementBackground
+import com.example.pexapp.presentation.uikit.theme.extraTextSize
+import com.example.pexapp.presentation.uikit.theme.topBarButtonInnerPadding
+import com.example.pexapp.presentation.uikit.theme.topBarButtonOuterPadding
+import com.example.pexapp.presentation.uikit.theme.topBarButtonShape
+import com.example.pexapp.presentation.uikit.theme.topBarInnerPadding
 
 @Composable
 fun AppTopBar(
-    hasButton: Boolean,
-    text: String,
-    textVisible: Boolean,
-    navController: NavHostController
-){
+    modifier: Modifier = Modifier,
+    trailingIcon: Painter? = null,
+    onTrailingClicked: () -> Unit = {},
+    text: String
+) {
 
-    Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(top = 17.dp)
-            .padding(horizontal = if (text == stringResource(id = R.string.bookmarks_header)) 0.dp else 24.dp),
-        horizontalArrangement = Arrangement.SpaceBetween
+    Box(
+        modifier = modifier
     ) {
-        if (hasButton){
-            Box(
+        trailingIcon?.let {
+            Icon(
                 modifier = Modifier
-                    .clip(RoundedCornerShape(12.dp))
-                    .size(40.dp)
-                    .background(MaterialTheme.colorScheme.primary)
-            ) {
-                IconButton(onClick = {
-                    navController.popBackStack()
-                }) {
-                    Icon(
-                        painter = painterResource(R.drawable.icon_favourites_active),
-                        contentDescription = stringResource(id = R.string.back_button_description),
-                        tint = MaterialTheme.colorScheme.onBackground
-                    )
-                }
-            }
+                    .padding(topBarButtonOuterPadding)
+                    .clip(topBarButtonShape)
+                    .background(clickableElementBackground)
+                    .padding(topBarButtonInnerPadding)
+                    .clickable { onTrailingClicked() },
+                painter = trailingIcon,
+                tint = baseTextColor,
+                contentDescription = stringResource(R.string.picture_description)
+            )
         }
 
-        if (textVisible){
-            Text(
-                text = text,
-                fontSize = 18.sp,
-                fontFamily = FontFamily(Font(R.font.mulish_700)),
-                color = MaterialTheme.colorScheme.onBackground,
-                textAlign = TextAlign.Center,
+        Text(
+            modifier = Modifier.align(Alignment.Center),
+            text = text,
+            style = appTextStyle.copy(
+                color = baseTextColor,
+                fontSize = extraTextSize,
+                fontWeight = FontWeight.Medium
+            )
+        )
+    }
+}
+
+@Composable
+@Preview
+private fun LightTheme() {
+    PexAppTheme(
+        darkTheme = false
+    ) {
+        Surface {
+            Column(
                 modifier = Modifier
                     .fillMaxWidth()
-            )
+                    .background(appColor)
+            ) {
+                AppTopBar(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(topBarInnerPadding),
+                    text = "skamkldsmaskdm"
+                )
+                Spacer(Modifier.height(20.dp))
+                AppTopBar(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(topBarInnerPadding),
+                    trailingIcon = painterResource(R.drawable.navigate_back),
+                    text = "skamkldsmaskdm"
+                )
+                Spacer(Modifier.height(20.dp))
+            }
+        }
+    }
+}
+
+@Composable
+@Preview
+private fun DarkTheme() {
+    PexAppTheme(
+        darkTheme = true
+    ) {
+        Surface {
+            Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .background(appColor)
+            ) {
+                AppTopBar(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(topBarInnerPadding),
+                    text = "skamkldsmaskdm"
+                )
+                Spacer(Modifier.height(20.dp))
+                AppTopBar(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(topBarInnerPadding),
+                    trailingIcon = painterResource(R.drawable.navigate_back),
+                    text = "skamkldsmaskdm"
+                )
+                Spacer(Modifier.height(20.dp))
+            }
         }
     }
 }

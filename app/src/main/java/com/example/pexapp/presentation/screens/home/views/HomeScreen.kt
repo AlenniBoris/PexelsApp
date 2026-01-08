@@ -1,5 +1,6 @@
 package com.example.pexapp.presentation.screens.home.views
 
+import android.net.Uri
 import android.widget.Toast
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
@@ -34,6 +35,7 @@ import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavHostController
 import com.example.pexapp.R
+import com.example.pexapp.domain.util.GsonUtil.toJson
 import com.example.pexapp.presentation.navigation.AppScreen
 import com.example.pexapp.presentation.screens.home.HomeScreenState
 import com.example.pexapp.presentation.screens.home.HomeScreenValues
@@ -46,6 +48,8 @@ import com.example.pexapp.presentation.uikit.theme.appContentPadding
 import com.example.pexapp.presentation.uikit.theme.homeScreenSectionTopPadding
 import com.example.pexapp.presentation.uikit.theme.loadingProgressIndicatorHeight
 import com.example.pexapp.presentation.uikit.theme.progressIndicatorColor
+import com.example.pexapp.presentation.uikit.theme.topBarInnerPadding
+import com.example.pexapp.presentation.uikit.theme.topBarOuterPadding
 import com.example.pexapp.presentation.uikit.views.AppEmptyScreen
 import com.example.pexapp.presentation.uikit.views.AppExceptionScreen
 import com.example.pexapp.presentation.uikit.views.AppPhotoSection
@@ -78,8 +82,9 @@ fun HomeScreen(
 
     LaunchedEffect(event) {
         launch {
-            event.filterIsInstance<IHomeScreenEvent.OpenPicture>().collect { coming ->
-                navController.navigate(AppScreen.Details.route + coming.pictureId)
+            event.filterIsInstance<IHomeScreenEvent.OpenPhoto>().collect { coming ->
+                val encodedJson = Uri.encode(coming.photo.toJson())
+                navController.navigate(AppScreen.Details.route + encodedJson)
             }
         }
         launch {
@@ -117,6 +122,7 @@ private fun HomeScreenUi(
 
         HomeScreenSearchBar(
             modifier = Modifier
+                .padding(topBarOuterPadding)
                 .fillMaxWidth(),
             query = state.query,
             history = state.workingHistory,
@@ -233,6 +239,7 @@ private fun HomeScreenUi(
                                     .padding(appContentPadding),
                                 photos = state.photos,
                                 listState = listState,
+                                isLoading = state.isPhotosLoading,
                                 onPhotoClicked = { photo ->
                                     proceedIntent(
                                         IHomeScreenIntent.OpenPhotoDetails(photo)

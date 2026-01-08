@@ -8,16 +8,22 @@ sealed class AppScreen(
     val notActiveIcon: Int? = null
 ) {
     data object Home : AppScreen(
-        "homescreen",
-        R.drawable.icon_home_active,
-        R.drawable.icon_home_not_active
+        route = "homescreen",
+        activeIcon = R.drawable.icon_home_active,
+        notActiveIcon = R.drawable.icon_home_not_active
     )
 
     data object Favourite : AppScreen(
-        "favouritescreen",
-        R.drawable.icon_favourites_active,
-        R.drawable.icon_favourites_not_active
+        route = "favouritescreen",
+        activeIcon = R.drawable.icon_favourites_active,
+        notActiveIcon = R.drawable.icon_favourites_not_active
     )
 
     data object Details : AppScreen("detailsscreen/")
+
+    data object Settings : AppScreen(
+        route = "settingsscreen",
+        activeIcon = R.drawable.settings_icon_active,
+        notActiveIcon = R.drawable.settings_icon
+    )
 }

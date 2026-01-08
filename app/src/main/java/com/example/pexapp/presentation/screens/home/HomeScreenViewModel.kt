@@ -177,7 +177,6 @@ class HomeScreenViewModel @Inject constructor(
                     query = newValue
                 )
             }
-            LogPrinter.printLog("!!!!", _state.value.workingQuery)
             val newSelectedFeatured =
                 _state.value.featuredCollections.firstOrNull { it.text == newValue }
             newSelectedFeatured?.let { collection ->
@@ -303,11 +302,9 @@ class HomeScreenViewModel @Inject constructor(
     }
 
     private fun openPhotoDetails(photo: PhotoModelUi) {
-        photo.domainModel?.let { modelDomain ->
-            _event.emit(
-                IHomeScreenEvent.OpenPicture(pictureId = modelDomain.id.toString())
-            )
-        }
+        _event.emit(
+            IHomeScreenEvent.OpenPhoto(photo = photo)
+        )
     }
 
     private fun refreshData() {

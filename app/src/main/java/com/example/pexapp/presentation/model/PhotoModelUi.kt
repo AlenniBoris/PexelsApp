@@ -18,7 +18,8 @@ fun PhotoModelDomain.toSimpleModel(): PhotoSimpleModelDomain =
     PhotoSimpleModelDomain(
         id = this.id,
         photographer = this.photographer,
-        photoPictureUrl = this.src.medium
+        photoPictureMediumSizeUrl = this.src.medium,
+        photoPictureOriginalSizeUrl = this.src.original
     )
 
 fun PhotoSimpleModelDomain.toUiModel(): PhotoModelUi =

@@ -1,16 +1,19 @@
 package com.example.pexapp.presentation.navigation
 
+import android.net.Uri
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.pexapp.presentation.screens.details.views.DetailsScreen
 import com.example.pexapp.presentation.screens.favourite.views.FavouriteScreen
 import com.example.pexapp.presentation.screens.home.views.HomeScreen
+import com.example.pexapp.presentation.screens.settings.views.SettingsScreen
 
+@RequiresApi(Build.VERSION_CODES.TIRAMISU)
 @Composable
 fun NavigationGraph(
     navHostController: NavHostController,
@@ -18,8 +21,7 @@ fun NavigationGraph(
 ) {
     NavHost(
         navController = navHostController,
-        startDestination = Route.MainRoute.routeToScreen,
-        modifier = Modifier.padding(padding)
+        startDestination = Route.MainRoute.routeToScreen
     ) {
         composable(Route.MainRoute.routeToScreen) {
             HomeScreen(
@@ -28,13 +30,19 @@ fun NavigationGraph(
         }
         composable(Route.FavouriteRoute.routeToScreen) {
             FavouriteScreen(
-                navHostController = navHostController
+                navController = navHostController
             )
         }
         composable(Route.DetailsRoute.routeToScreen) { backStackEntry ->
             val arguments = requireNotNull(backStackEntry.arguments)
+            val decodedJson = arguments.getString("photoJson")?.let { Uri.decode(it) }
             DetailsScreen(
-                id = arguments.getString("id"),
+                photoJson = decodedJson,
+                navController = navHostController
+            )
+        }
+        composable(Route.SettingsRoute.routeToScreen) {
+            SettingsScreen(
                 navController = navHostController
             )
         }
